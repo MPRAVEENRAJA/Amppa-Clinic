@@ -1,0 +1,305 @@
+/*
+
+/*team Section Starts Here*/
+.team-item {
+    box-shadow: 0px 0px 10px 0px rgba(137, 137, 137, 0.1);
+    background: $white-color;
+    border-radius: 10px;
+    margin: 0 auto 30px;
+    @include transition($transition);
+
+    &:hover {
+        @include transform(translateY(-5px));
+    }
+
+    .team-inner {
+        @extend %hidden;
+        @include border-radius(10px);
+        @extend %flex;
+
+        .team-thumb {
+            padding: 30px 34px;
+            @extend %rel;
+            width: calc(100% - 310px);
+
+            &::before {
+                @extend %bg-theme;
+                @extend %center;
+                width: 100%;
+                height: 100%;
+                clip-path: polygon(0 0, 0% 100%, 100% 100%);
+                -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
+            }
+
+            .thumb-inner {
+                a {
+                    display: block;
+                    @extend %rel;
+                    z-index: 1;
+
+                    &::before {
+                        @include border-radius(50%);
+                        @extend %center;
+                        @extend %w-100;
+                        @extend %h-100;
+                        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+                        border: 6px solid $white-color;
+                    }
+                }
+
+                img {
+                    @extend %w-100;
+                    @include border-radius(50%);
+                }
+            }
+        }
+
+        .team-content {
+            width: 310px;
+            padding: 30px 30px 30px 0;
+
+            .title {
+                margin-bottom: 5px;
+            }
+
+            .info {
+                @extend %title-color;
+                display: block;
+                font-size: 14px;
+                @extend %mb-10;
+            }
+
+            p {
+                @extend %mb-20;
+                line-height: 24px;
+            }
+        }
+
+        @include breakpoint(lg) {
+            @include breakpoint(max-xl) {
+
+                .team-thumb,
+                .team-content {
+                    width: 100%;
+                    padding: 30px;
+                }
+            }
+        }
+
+        @include breakpoint(max-md) {
+            @media screen and (min-width:500px) {
+
+                .team-thumb,
+                .team-content {
+                    width: 50%;
+                }
+
+                .team-thumb {
+                    padding: 20px;
+                }
+
+                .team-content {
+                    padding: 20px;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:499px) {
+        .team-inner {
+
+            .team-thumb,
+            .team-content {
+                width: 100%;
+                padding: 30px;
+            }
+        }
+    }
+}
+
+/*team Section Two Starts Here*/
+.team-item-2 {
+    @include border-radius(2px);
+    background-color: $white-color;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+    margin-bottom: 30px;
+
+    &:hover {
+        .team-thumb {
+            .thumb {
+                img {
+                    @include transform(scale(1.2));
+                }
+            }
+        }
+    }
+
+    .team-thumb {
+        padding: 15px;
+
+        .thumb {
+            @include border-radius(0%);
+            margin: 0 auto 35px;
+            @extend %hidden;
+
+            a {
+                display: block;
+                overflow: hidden;
+                @include border-radius(0%);
+            }
+
+            img {
+                width: 100%;
+                @include border-radius(0%);
+                @include transition($transition);
+            }
+        }
+
+        .content {
+            padding: 0 15px 10px;
+            @extend %rel;
+
+            &::after,
+            &::before {
+                @extend %abs;
+                width: 100%;
+                height: 1px;
+                background: $border-color;
+                left: 0;
+            }
+
+            &::after {
+                top: calc(100% + 12px);
+            }
+
+            &::before {
+                top: calc(100% + 7px);
+            }
+
+            .title {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .team-footer {
+        padding: 10px 15px;
+
+        .team-social {
+            margin: 0;
+
+            li {
+                a {
+                    padding: 5px;
+                }
+            }
+        }
+
+        .vol-pro {
+            color: $theme-color;
+            font-weight: 600;
+        }
+    }
+}
+
+/*team Section Two Starts Here*/
+.team-item-3 {
+    box-shadow: 0px 0px 10px 0px rgba(137, 137, 137, 0.1);
+    background: $white-color;
+    margin: 0 auto 30px;
+    @include border-radius(6px);
+    @include transition($transition);
+
+    &:hover {
+        @include transform(translateY(-5px));
+        box-shadow: 0 10px 10px rgba(136, 136, 136, 0.1);
+    }
+
+    .team-inner {
+        .team-thumb {
+            img {
+                @extend %w-100;
+            }
+        }
+
+        .team-content {
+            padding: 20px 0;
+
+            .title {
+                margin-bottom: 5px;
+            }
+
+            .info {
+                @extend %title-color;
+                display: block;
+                @extend %mb-10;
+            }
+        }
+    }
+
+    &.style-2 {
+        padding: 15px 15px 0;
+
+        .team-inner {
+            .team-thumb {
+                img {
+                    @include border-radius(100%);
+                }
+            }
+
+            .team-content {}
+        }
+    }
+}
+
+.team-social {
+    @extend %flex;
+    margin: -5px;
+
+    li {
+        padding: 5px;
+        list-style: none !important;
+
+        a {
+            color: $theme-color;
+            background: transparent;
+
+            &.facebook {
+                color: $facebook;
+            }
+
+            &.behance {
+                color: $behance;
+            }
+
+            &.twitter {
+                color: $twitter;
+            }
+
+            &.google {
+                color: $google;
+            }
+
+            &.instagram {
+                color: $instagram;
+            }
+
+            &.linkedin {
+                color: $linkedin;
+            }
+
+            &.vimeo {
+                color: $vimeo;
+            }
+
+            &.pinterest {
+                color: $pinterest;
+            }
+
+            &.youtube {
+                color: $youtube;
+            }
+        }
+    }
+}

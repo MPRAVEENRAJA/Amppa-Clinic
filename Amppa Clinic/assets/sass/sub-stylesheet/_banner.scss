@@ -1,0 +1,95 @@
+/* @@@@@@@@@@@@@  Banner Section Start Here  @@@@@@@@@@@@@@ */
+.banner-section {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 170px 0;
+
+    .banner-wrapper {
+        .banner-content {
+            max-width: 550px;
+
+            h2 {
+                @extend %text-regular;
+                @extend %mb-0;
+            }
+
+            h1 {
+                @extend %text-regular;
+                @extend %mb-0;
+                line-height: 1.2;
+
+                b {
+                    @extend %theme-color;
+                }
+
+                @include breakpoint(sm) {
+                    font-size: 3.5rem;
+                }
+
+                @include breakpoint(lg) {
+                    font-size: 3.75rem;
+                }
+            }
+
+            a {
+                @extend %mt-30;
+                @extend %mb-5;
+            }
+        }
+    }
+
+    &.style-2 {
+        padding: 125px 0;
+
+        @include breakpoint(md) {
+            padding: 150px 0;
+        }
+
+        @include breakpoint(lg) {
+            padding-top: 300px;
+            padding-bottom: 210px;
+        }
+
+        .contant-area {
+            .banner-contant {
+                max-width: 550px;
+
+                @include breakpoint(max-sm) {
+                    margin: 0 20px;
+                }
+
+                h3 {
+                    color: $white-color;
+                }
+
+                h2 {
+                    color: $white-color;
+                    line-height: 1.2;
+                    font-size: 35px;
+
+                    @include breakpoint(sm) {
+                        font-size: 50px;
+                    }
+
+                    @include breakpoint(md) {
+                        font-size: 60px;
+                    }
+
+                    span {
+                        font-weight: 400;
+                    }
+                }
+
+
+                .lab-btn {
+                    margin-top: 35px;
+                }
+
+                span {
+                    @extend %rel;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

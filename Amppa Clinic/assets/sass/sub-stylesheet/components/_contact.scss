@@ -1,0 +1,74 @@
+
+/*@@@@@@@@@@@@@@   Contact Us Page Start Here  @@@@@@@@@@@@@@@@@*/
+.contact-us {
+    .contact-wrap {
+        @extend %rel;
+        padding: 30px;
+        @extend %mb-30-none;
+        @extend %bg-white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        .contact-title {
+            @extend %mb-30;
+        }
+    }
+    .contact-area {
+        margin: 0 0 30px;
+        @include breakpoint(md) {
+            margin-bottom: 0;
+        }
+        .contact-item {
+            @extend %flex;
+            align-items: flex-start;
+            @extend %justify-between;
+            border-bottom: 1px solid $border-color;
+            margin-bottom: 20px;
+            &:last-child {
+                @extend %mb-0;
+                border-bottom: none;
+            }
+            .contact-icon {
+                width: 30px;
+                text-align: center;
+            }
+            .content {
+                width: calc(100% - 45px);
+                h6 {
+                    @extend %mb-0;
+                }
+            }
+        }
+    }
+    .contact-form {
+        @extend %flex;
+        @extend %justify-between;
+        input.contact-input {
+            @include breakpoint(lg) {
+                width: calc(100% / 2 - 15px);
+            }
+        }
+        textarea.contact-input {}
+        
+        .lab-btn {
+            width: 180px;
+            color: $white-color;
+            text-transform: uppercase;
+            cursor: pointer;
+            @extend %bg-theme;
+            &:hover {
+                // @include transform(translateY(-5px));
+            }
+        }
+    }
+}
+
+
+/*@@@@@@@@@@@@@@   Gmaps Section Start Here  @@@@@@@@@@@@@@@@@*/
+.gmaps-section {
+    .map-area {
+        iframe {
+            height: 550px;
+            @extend %w-100;
+            border: none;
+        }
+    }
+}

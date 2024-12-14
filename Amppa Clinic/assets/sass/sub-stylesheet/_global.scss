@@ -1,0 +1,496 @@
+/* @@@@@@@@@@@@@  Global CSS  @@@@@@@@@@@@@@ */
+
+
+.bg-color {
+    @extend %bg-color;
+}
+
+
+// scrollTop
+.scrollToTop {
+    position: fixed;
+    bottom: -30%;
+    right: 5%;
+    z-index: 9;
+
+    i {
+        @extend %d-inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        @extend %text-center;
+        color: $white-color;
+        @extend %bg-theme;
+        border: 1px solid $border-color;
+        font-size: $fs-h4;
+        @include transition($transition);
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 20px 0px rgba(0, 113, 240, 0.49)
+        }
+    }
+}
+
+
+@include breakpoint(lg) {
+    .pt-lg-110 {
+        padding-top: 108px !important;
+    }
+
+    .pb-lg-110 {
+        padding-bottom: 110px !important;
+    }
+}
+
+.breadcrumb {
+    background-color: transparent;
+}
+
+/*==============|| Menu Icon Change ||=======================*/
+.dd-icon-down {
+    @extend %rel;
+}
+
+.dd-icon-down::after {
+    @extend %abs;
+    @extend %d-block;
+    width: 10px;
+    height: 2px;
+    top: 50%;
+    transform: rotate(-90deg);
+    right: -5px;
+    @extend %bg-white;
+    @include transition($transition);
+}
+
+.dd-icon-down::before {
+    @extend %abs;
+    @extend %d-block;
+    width: 10px;
+    height: 2px;
+    top: 50%;
+    right: -5px;
+    @extend %bg-white;
+    @include transition($transition);
+}
+
+.m-menu li.open a.dd-icon-down::before,
+.m-menu li.open a.dd-icon-down::after {
+    @extend %bg-theme;
+}
+
+.m-menu li.open a.dd-icon-down::before {
+    transform: rotate(-45deg);
+}
+
+.m-menu li.open a.dd-icon-down::after {
+    transform: rotate(45deg);
+}
+
+.main-menu li.active a.dd-icon-down::after {
+    @extend %bg-theme;
+}
+
+// m-menu start here
+.style-2 .dd-icon-down::before,
+.style-2 .dd-icon-down::after {
+    background: $title-color;
+}
+
+.style-2 .primary-menu .menu-area .main-menu li.active a.dd-icon-down::after {
+    background: $title-color;
+}
+
+.style-2 .primary-menu .menu-area .main-menu li.active a.dd-icon-down::before {
+    background: $title-color;
+}
+
+.primary-menu .menu-area .main-menu li.active a.dd-icon-down::before {
+    @extend %bg-white;
+}
+
+.primary-menu .menu-area .main-menu li.active a.dd-icon-down::after {
+    @extend %bg-white;
+}
+
+.primary-menu.sticky-nav .menu-area .main-menu li a.dd-icon-down::before {
+    @extend %bg-white;
+}
+
+.primary-menu.sticky-nav .menu-area .main-menu li a.dd-icon-down::after {
+    @extend %bg-white;
+}
+
+.primary-menu.sticky-nav .menu-area .main-menu li.active>a.dd-icon-down::before {
+    background: $black-color
+}
+
+.primary-menu.sticky-nav .menu-area .main-menu li.active>a.dd-icon-down::after {
+    background: $black-color
+}
+
+// dd-icon-right
+.dd-icon-right {
+    @extend %rel;
+}
+
+.dd-icon-right::after {
+    @extend %abs;
+    @extend %d-block;
+    width: 8px;
+    height: 2px;
+    top: 50%;
+    transform: rotate(-45deg);
+    right: -9px;
+    @extend %bg-white;
+}
+
+.dd-icon-right::before {
+    content: "";
+    @extend %abs;
+    @extend %d-block;
+    width: 8px;
+    height: 2px;
+    top: 50%;
+    transform: rotate(45deg);
+    right: -5px;
+    @extend %bg-white;
+}
+
+.primary-menu .menu-area .main-menu li ul li:hover>a.dd-icon-right::before {
+    @extend %bg-theme;
+}
+
+.primary-menu .menu-area .main-menu li ul li:hover>a.dd-icon-right::after {
+    @extend %bg-theme;
+}
+
+
+
+
+/*==============|| Feature Item start here||=======================*/
+.feature-item {
+    @extend %bg-white;
+    padding: 40px 24px;
+    @include transition($transition);
+    @extend %mb-30;
+
+    .lab-inner {
+        .lab-thumb {
+            @extend %mb-30;
+        }
+
+        .lab-content {
+            a {
+                @extend %title-color;
+                @extend %text-bold;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        filter: drop-shadow(-1.395px 19.951px 5px rgba(136, 136, 136, 0.1));
+        transform: translateY(-5px);
+    }
+}
+
+/*=================|| Doctor Item start here ||=================*/
+
+.doctor-item {
+    &.style-1 {
+        @include transition(0.3s all cubic-bezier(.46, .03, .52, .96));
+
+        .doctor-inner {
+            .doctor-thumb {
+                @extend %hidden;
+
+                img {
+                    @include transition(.3s all linear);
+                    @extend %w-100;
+                }
+            }
+
+            .doctor-content {
+                .doctor-name {
+                    @extend %p-20;
+
+                    h4 {
+                        @extend %mb-0;
+
+                        a {
+                            color: $white-color;
+                        }
+                    }
+
+                    p {
+                        color: $white-color;
+                        font-size: 15px;
+                        @extend %mb-5;
+                    }
+                }
+
+                .doctor-contact {
+                    @extend %list-none;
+                    @extend %p-20;
+                    @extend %rel;
+                    @extend %mb-0;
+
+                    &:before {
+                        @extend %abs;
+                        top: -10px;
+                        left: 24px;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 15px 15px 15px;
+                        border-color: transparent transparent #fff transparent;
+                    }
+
+                    li {
+                        span {
+                            color: $title-color;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        &:hover,
+        &.active {
+            box-shadow: 0 25px 10px #8080801a;
+
+            .doctor-inner {
+                .doctor-thumb {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    &.style-2 {
+        .doctor-inner {
+            .doctor-thumb {
+                @extend %hidden;
+
+                img {
+                    @include transition(.3s all linear);
+                    @extend %w-100;
+                }
+            }
+
+            .doctor-content {
+                .doctor-name {
+                    @extend %p-20;
+
+                    h4 {
+                        @extend %mb-0;
+
+                        a {
+                            color: $title-color;
+                        }
+                    }
+
+                    p {
+                        color: $desc-color;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+
+            .doctor-inner {
+                .doctor-thumb {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .doctor-content {
+                    .doctor-name {
+                        h4 {
+                            a {
+                                color: $theme-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*=================|| Pagination here ||=================*/
+.pagination-area {
+    padding: 20px 0;
+
+    .pagination {
+        @extend %m-0;
+        @extend %align-items-center;
+
+        li {
+            @extend %list-none;
+
+            &.dot {
+                @extend %text-bold;
+                @extend %p-10;
+                font-size: $fs-h6;
+            }
+
+            &.prev {
+                @extend %mr-5;
+
+                a {
+                    @extend %text-regular;
+                }
+            }
+
+            &.next {
+                @extend %ml-5;
+
+                a {
+                    @extend %text-regular;
+                }
+            }
+
+            a {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                @extend %text-center;
+                @extend %bg-white;
+                @extend %d-inline-block;
+                color: $title-color;
+                margin: 0 2px;
+                @extend %text-bold;
+                border-radius: 50%;
+                border: 1px solid #f0f7ff;
+                @include transition($transition);
+
+                &:hover {
+                    @extend %bg-theme;
+                    color: $white-color;
+                }
+
+                &.active {
+                    @extend %bg-theme;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}
+
+/*=================|| Social media list ||=================*/
+.social-link-list {
+    @extend %m-0;
+    @extend %mt-25;
+
+    li {
+        @extend %list-none;
+
+        a {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            @extend %d-inline-block;
+            @extend %text-center;
+            color: $white-color;
+            margin: 0 5px;
+            @include transition($transition);
+
+            &:hover {
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+
+
+
+// preloader
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999; 
+    width: 100%;
+    height: 100%;
+    background: $theme-color;
+    @extend %hidden;
+    .preloader-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); 
+        .preloader-icon {
+            width: 72px;
+            height: 72px;
+            display: inline-block;
+            padding: 0px; 
+            span {
+                position: absolute;
+                display: inline-block;
+                width: 72px;
+                height: 72px;
+                border-radius: 100%;
+                background: #fff;
+                -webkit-animation: preloader-fx 1.6s linear infinite;
+                animation: preloader-fx 1.6s linear infinite;
+                &:last-child {
+                    animation-delay: -0.8s;
+                    -webkit-animation-delay: -0.8s; 
+                }
+            }
+        }
+    }
+}
+  
+@keyframes preloader-fx {
+    0% {
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0);
+        opacity: 0.5; 
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 0; 
+    } 
+}
+@-webkit-keyframes preloader-fx {
+    0% {
+        -webkit-transform: scale(0, 0);
+        opacity: 0.5; 
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+        opacity: 0; 
+    } 
+}
+
+@keyframes price-ani{
+    0% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 0.5; 
+    }
+    100% {
+        -webkit-transform: scale(1.2, 1.2);
+        transform: scale(1.2, 1.2);
+        opacity: 0.1; 
+    } 
+}

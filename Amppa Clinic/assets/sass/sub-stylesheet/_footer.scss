@@ -1,0 +1,190 @@
+/* @@@@@@@@@@@@@  Footer Section Start Here  @@@@@@@@@@@@@@ */
+.footer-section {
+    &.style-1 {
+        .footer-top {
+            background: url(../../assets/images/footer/bg1.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            padding-top: 80px;
+            padding-bottom: 70px;
+
+            @include breakpoint(lg) {
+                padding-top: 120px;
+                padding-bottom: 110px;
+            }
+
+
+
+            h3 {
+                color: $black-color;
+                text-transform: capitalize;
+                @extend %mb-15;
+            }
+
+            li {
+                list-style: none;
+                padding: 5px 0;
+                margin: 2px 0;
+            }
+
+            .contact-info {
+                ul {
+                    margin-bottom: 40px;
+
+                    @include breakpoint(lg) {
+                        margin-bottom: 0;
+                    }
+
+                    li {
+                        i {
+                            @extend %theme-color;
+                            margin-right: 5px;
+                        }
+
+                        a {
+
+                            @extend %d-inline-block;
+
+                            &:hover {
+                                color: $theme-color;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .doctor-info {
+                @include breakpoint(lg) {
+                    margin-left: 45px;
+                }
+            }
+
+            .service-info {
+                @include breakpoint(lg) {
+                    margin-left: 15px;
+                }
+            }
+
+            .doctor-info,
+            .service-info {
+                ul {
+                    @extend %m-0;
+
+                    li {
+                        @include transition($transition);
+                        padding: 7px 0;
+
+                        i {
+                            font-size: $fs-base;
+                            margin-right: 5px;
+                        }
+
+                        &:hover {
+                            @extend %ml-10;
+                            @extend %theme-color;
+
+                            a {
+                                @extend %theme-color;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .time-info {
+                .dep-item {
+                    padding: 8px 0;
+                }
+            }
+
+            .footer-about {
+                @extend %text-center;
+                margin-bottom: 40px;
+
+                @include breakpoint(lg) {
+                    margin: 0;
+                }
+
+                .top {
+                    @extend %mb-15;
+
+                    .footer-logo {
+                        @extend %mb-15;
+                        display: inline-block;
+                    }
+                }
+
+                .bottom {
+                    .news-input {
+                        @extend %rel;
+                        @extend %flex;
+                        @extend %align-items-center;
+                        @extend %bg-white;
+                        flex-wrap: nowrap;
+                        border-radius: 3px;
+                        border: 1px solid $border-color;
+
+                        &::after {
+                            @extend %abs;
+                            content: "\efb4";
+                            font-family: icoFont !important;
+                            top: 50%;
+                            transform: translateY(-50%) rotate(-5deg);
+                            @extend %text-bold;
+                            @extend %pl-10;
+                            @extend %theme-color;
+                            font-size: $fs-h4;
+                        }
+
+                        input[type="text"] {
+                            outline: none;
+                            color: #696969;
+                            @extend %mb-0;
+                            border: none;
+                            padding: 13.5px 0;
+                            padding-left: 40px;
+                        }
+
+                        button[type="submit"] {
+                            @extend %bg-theme;
+                            padding: 15px 7px;
+                            color: $white-color;
+                            font-size: $fs-small;
+                            @extend %text-bold;
+                            @extend %pointer;
+                            width: 226px;
+                            border-radius: 0;
+                            border-top-right-radius: 3px;
+                            border-bottom-right-radius: 3px;
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-bottom {
+            padding: 32px 0;
+            border-top: 1px solid $border-color;
+
+            span {
+                text-transform: capitalize;
+
+                a {
+                    font-weight: 500;
+                    margin: 0 5px;
+
+                    &:hover {
+                        color: $theme-color;
+                    }
+
+                    &:first-child {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+}

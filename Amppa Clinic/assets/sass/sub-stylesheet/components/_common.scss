@@ -1,0 +1,392 @@
+/* @@@@@@@@@@@@@  Ul Tag Start Here  @@@@@@@@@@@@@@ */
+.lab-ul {
+    @extend %p-0;
+    @extend %m-0;
+
+    li {
+        @extend %list-none;
+    }
+
+    &.icon-style-list {
+        @extend %m-0;
+
+        >li {
+            @extend %p-0;
+            border-bottom: 1px solid $border-color;
+            @extend %justify-start;
+
+            &:first-child {
+                border-top: 1px solid $border-color;
+            }
+
+            i {
+                width: 50px;
+                @extend %text-center;
+                color: #c2c2c2;
+                margin: 0 15px 0 5px;
+                line-height: 50px;
+                @extend %d-inline-block;
+                @extend %rel;
+
+                &:after {
+                    @extend %abs;
+                    @extend %w-100;
+                    height: calc(100% + 18px);
+                    border-left: 1px solid $border-color;
+                    border-right: 1px solid $border-color;
+                    top: -9px;
+                    left: 0;
+                }
+            }
+
+            span {
+                width: calc(100% - 70px);
+            }
+        }
+    }
+}
+
+/* @@@@@@@@@@@@@  Common CSS Writing Now  @@@@@@@@@@@@@@ */
+
+.padding-tb {
+    padding: 80px 0;
+
+    @include breakpoint(lg) {
+        padding: 120px 0;
+    }
+}
+
+// widget title start here
+.widget-title {
+    margin-bottom: 40px;
+
+    h3 {
+        @extend %rel;
+
+        &::before {
+            @extend %abs;
+            width: 40px;
+            height: 4px;
+            @extend %bg-theme;
+            bottom: -20px;
+            border-radius: 2px;
+        }
+
+        &::after {
+            @extend %abs;
+            border-bottom: 4px dotted $theme-color;
+            width: 25px;
+            bottom: -20px;
+            left: 45px;
+        }
+    }
+}
+
+.lab-btn {
+    @extend %d-inline-block;
+    line-height: 45px;
+    @extend %bg-theme;
+    @include transition($transition);
+    @include border-radius(2px);
+    @extend %rel;
+    @extend %hidden;
+    @extend %pointer;
+    padding: 0 1.3rem;
+    border: 2px solid $theme-color;
+    color: $white-color;
+    text-transform: capitalize;
+
+    span {
+        color: $white-color;
+    }
+
+    &::before,
+    &::after {
+        @extend %w-100;
+        @extend %h-100;
+        @extend %abs;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        transform: scale(0);
+        transition: 0.5s;
+    }
+
+    &:before {
+        border-bottom: 3px solid $white-color;
+        border-left: 3px solid $white-color;
+        transform-origin: 100% 0%;
+        -webkit-transform-origin: 100% 0%;
+    }
+
+    &:after {
+        border-top: 3px solid $white-color;
+        border-right: 3px solid $white-color;
+        transform-origin: 0% 100%;
+        -webkit-transform-origin: 0% 100%;
+    }
+
+    &:hover {
+        background-color: $theme-color;
+        color: $white-color;
+
+        &:before,
+        &:after {
+            box-shadow: 0 0 24px rgba($theme-color, $alpha: .30);
+            transform: scale(1);
+        }
+    }
+
+    &.style-2 {
+        background: transparent;
+        border: 2px solid $white-color;
+
+        span {
+            color: $theme-color;
+        }
+    }
+}
+
+.text-btn {
+    @extend %text-bold;
+    font-size: $fs-small;
+    color: $black-color;
+    @include transition($transition);
+
+    &:hover {
+        padding-left: 10px;
+        color: $theme-color;
+    }
+}
+
+.mb-30-none {
+    margin-bottom: -30px;
+}
+
+.p-30 {
+    @extend %p-30;
+}
+
+.px-15 {
+    @include breakpoint(sm) {
+        padding: 0 15px;
+    }
+}
+
+/* @@@@@@@@@@@@@  Header Section Start Here  @@@@@@@@@@@@@@ */
+.section-header {
+    @extend %text-center;
+    @extend %mb-30;
+    @extend %rel;
+    z-index: 1;
+
+    @include breakpoint(lg) {
+        max-width: 70%;
+        margin: 0 auto 50px;
+    }
+
+    @include breakpoint(xl) {
+        max-width: 63%;
+    }
+
+    h2 {
+        margin-top: -10px;
+    }
+
+    span {
+        display: block;
+        font-weight: 300;
+    }
+}
+
+
+/* @@@@@@@@@@@@@  video thumb Start Here  @@@@@@@@@@@@@@ */
+.video-thumb {
+    @extend %rel;
+
+    &:hover {
+        .video-icon {
+            i {
+                color: $youtube;
+            }
+        }
+    }
+
+    img {
+        @extend %w-100;
+    }
+
+    .video-icon {
+        @extend %abs;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        i {
+            color: $white-color;
+            font-size: $fs-h3;
+            @include transition($transition);
+
+            @include breakpoint(sm) {
+                font-size: $fs-h1;
+            }
+        }
+    }
+}
+
+/* @@@@@@@@@@@@@  paginations Start Here  @@@@@@@@@@@@@@ */
+.paginations {
+    margin: 40px 0;
+
+    @include breakpoint(lg) {
+        margin-bottom: 0;
+    }
+
+    ul {
+        @extend %m-0;
+
+        li {
+            padding: 5px;
+
+            a {
+                width: 46px;
+                height: 46px;
+                @extend %align-items-center;
+                @extend %justify-center;
+                box-shadow: 0 0px 5px rgba(136, 136, 136, .1);
+                color: $desc-color;
+                z-index: 1;
+                @extend %rel;
+                @extend %flex;
+                @include border-radius(50%);
+                @include transition($transition);
+
+                &.active,
+                &:hover {
+                    color: $white-color;
+                    box-shadow: 0 18px 24px rgba(255, 51, 114, .36);
+                    @extend %bg-theme;
+                }
+
+                &.dot {
+                    box-shadow: none;
+
+                    &:hover {
+                        background: transparent;
+                        color: $desc-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*@@@@@@@@@@@@@@   cart-plus-minus Start Here  @@@@@@@@@@@@@@@@@*/
+.cart-plus-minus {
+    border: 1px solid $border-color;
+    width: 120px;
+    margin: 0 auto;
+    @extend %pointer;
+    @extend %rel;
+    @extend %hidden;
+
+    .dec.qtybutton {
+        border-right: 1px solid $border-color;
+        height: 40px;
+        left: 0;
+        top: 0;
+    }
+
+    .cart-plus-minus-box {
+        border: medium none;
+        @extend %title-color;
+        float: left;
+        font-size: 14px;
+        height: 40px;
+        @extend %m-0;
+        @extend %text-center;
+        width: 120px;
+        outline: none;
+    }
+
+    .qtybutton {
+        @extend %title-color;
+        float: $white-color;
+        font-size: 14px;
+        font-weight: 500;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        @extend %m-0;
+        @extend %text-center;
+        @extend %abs;
+        @include transition($transition);
+
+        &:hover {
+            color: $white-color;
+            @extend %bg-theme;
+        }
+    }
+
+    .inc.qtybutton {
+        border-left: 1px solid $border-color;
+        right: 0;
+        top: 0;
+    }
+}
+
+
+
+/*@@@@@@@@@@@@@@   scocial-media Start Here  @@@@@@@@@@@@@@@@@*/
+.scocial-media {
+    @extend %mb-20;
+
+    a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 2px;
+        color: $white-color;
+        font-size: $fs-h5;
+        margin-bottom: 4px;
+        @extend %text-center;
+        @extend %d-inline-block;
+
+        &:hover {
+            border-radius: 100%;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(136, 136, 136, .20);
+        }
+    }
+}
+
+.fa-phone-square {
+    &::before {
+        transform: rotate(90deg);
+        @extend %d-inline-block;
+    }
+}
+
+.facebook {
+    background: $facebook;
+}
+
+.behance {
+    background: $behance;
+}
+
+.twitter {
+    background: $twitter;
+}
+
+.linkedin {
+    background: $linkedin;
+}
+
+.vimeo {
+    background: $vimeo;
+}
+
+.dribble {
+    background: $dribble;
+}
